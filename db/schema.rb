@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918194243) do
+ActiveRecord::Schema.define(version: 20160918230415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,4 +26,17 @@ ActiveRecord::Schema.define(version: 20160918194243) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "zillow_properties", force: :cascade do |t|
+    t.string   "street_address"
+    t.string   "city"
+    t.integer  "zip_code"
+    t.float    "zestimate"
+    t.integer  "tax_roll_property_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "zillow_properties", ["tax_roll_property_id"], name: "index_zillow_properties_on_tax_roll_property_id", using: :btree
+
+  add_foreign_key "zillow_properties", "tax_roll_properties"
 end

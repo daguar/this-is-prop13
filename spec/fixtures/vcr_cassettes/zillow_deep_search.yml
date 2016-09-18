@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.zillow.com/webservice/GetDeepSearchResults.htm?address=1427%2026TH%20AV&citystatezip=San%20Francisco,%20CA&rentzestimate=false&zws-id=fakekeyfortests
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 Sep 2016 22:51:31 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Cache-Control:
+      - no-cache
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Internal-Host:
+      - '002'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '2463'
+      Set-Cookie:
+      - F5P=2686502922.0.0000; path=/
+      - JSESSIONID=3FA37ECDB1C850CA8D8EA4AA032467A3; Path=/; HttpOnly
+      - JSESSIONID=3FA37ECDB1C850CA8D8EA4AA032467A3; Path=/; HttpOnly
+      - abtest=2|pP6TP8ubTKDFl%2BkH; Domain=.zillow.com; Expires=Sat, 19-Sep-2026
+        10:51:31 GMT; Path=/
+      - zguid=22|%5B%2251349a6b-7b1a-49fb-ae3d-7075057af448%22%2C%22000000%22%2C%22%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%22%2C%22false%40false%40false%40false%400%400%400%400%400%400%22%2C%220%22%2C%220%22%2C%220%22%2C%2210%22%2C%220%22%2C%220%400%400%400%400%400%22%2C%22%22%5D;
+        Domain=.zillow.com; Expires=Sat, 19-Sep-2026 10:51:31 GMT; Path=/
+      Via:
+      - 1.1 www.zillow.com
+      Vary:
+      - User-Agent
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><SearchResults:searchresults xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd
+        http://www.zillowstatic.com/vstatic/977e040/static/xsd/SearchResults.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd"><request><address>1427
+        26TH AV</address><citystatezip>San Francisco, CA</citystatezip></request><message><text>Request
+        successfully processed</text><code>0</code></message><response><results><result><zpid>15105144</zpid><links><homedetails>http://www.zillow.com/homedetails/1427-26th-Ave-San-Francisco-CA-94122/15105144_zpid/</homedetails><graphsanddata>http://www.zillow.com/homedetails/1427-26th-Ave-San-Francisco-CA-94122/15105144_zpid/#charts-and-data</graphsanddata><mapthishome>http://www.zillow.com/homes/15105144_zpid/</mapthishome><comparables>http://www.zillow.com/homes/comps/15105144_zpid/</comparables></links><address><street>1427
+        26th Ave</street><zipcode>94122</zipcode><city>San Francisco</city><state>CA</state><latitude>37.760801</latitude><longitude>-122.484786</longitude></address><FIPScounty>6075</FIPScounty><useCode>SingleFamily</useCode><taxAssessmentYear>2015</taxAssessmentYear><taxAssessment>690550.0</taxAssessment><yearBuilt>1926</yearBuilt><lotSizeSqFt>3000</lotSizeSqFt><finishedSqFt>1615</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms><totalRooms>7</totalRooms><lastSoldDate>06/09/2000</lastSoldDate><lastSoldPrice
+        currency="USD">540000</lastSoldPrice><zestimate><amount currency="USD">1161166</amount><last-updated>09/17/2016</last-updated><oneWeekChange
+        deprecated="true"></oneWeekChange><valueChange duration="30" currency="USD">6489</valueChange><valuationRange><low
+        currency="USD">1056661</low><high currency="USD">1254059</high></valuationRange><percentile>0</percentile></zestimate><localRealEstate><region
+        name="Central Sunset" id="417497" type="neighborhood"><zindexValue>1,111,300</zindexValue><links><overview>http://www.zillow.com/local-info/CA-San-Francisco/Central-Sunset/r_417497/</overview><forSaleByOwner>http://www.zillow.com/central-sunset-san-francisco-ca/fsbo/</forSaleByOwner><forSale>http://www.zillow.com/central-sunset-san-francisco-ca/</forSale></links></region></localRealEstate></result></results></response></SearchResults:searchresults><!--
+        H:002  T:25ms  S:1206  R:Sun Sep 18 15:51:31 PDT 2016  B:5.0.34208-master.adeba81~hotfix_pre.dd45ca1
+        -->
+    http_version: 
+  recorded_at: Sun, 18 Sep 2016 22:51:31 GMT
+recorded_with: VCR 3.0.3
