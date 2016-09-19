@@ -14,4 +14,18 @@ RSpec.describe TaxRollProperty, type: :model do
       end
     end
   end
+
+  describe '#estimated_tax_amount' do
+    let(:property) do
+      create(:tax_roll_property,
+        assessed_improvement_value: 100000,
+        assessed_land_value: 200000,
+        assessed_fixtures_value: 20000
+      )
+    end
+
+    it 'is 1.1826% of the sum of all the asssesed values' do
+      expect(property.estimated_tax_amount).to eq(3784.32)
+    end
+  end
 end
