@@ -35,4 +35,17 @@ describe ZillowDataImporter do
       expect(ZillowProperty.last.zestimate).to eq(1161166)
     end
   end
+
+  context 'when a zillow property already exists in the database' do
+    before do
+      tax_roll_property = create(:tax_roll_property)
+      create(:zillow_property, tax_roll_property: tax_roll_property)
+      allow(Rubillow::PropertyDetails).to receive(:deep_search_results)
+    end
+
+    it 'does not search zillow or create a new prop' do
+      expect(Rubillow::PropertyDetails).to_not have_received(:deep_search_results)
+      expect(ZillowProperty.count).to eq(1)
+    end
+  end
 end
