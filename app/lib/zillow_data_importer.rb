@@ -18,7 +18,7 @@ class ZillowDataImporter
         tax_roll_property: tax_roll_property
       )
     else
-      #binding.pry
+      binding.pry
     end
   end
 

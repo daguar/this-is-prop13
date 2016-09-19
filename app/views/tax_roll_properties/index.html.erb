@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Prop DB Address</th>
+    <th>Zillow Address</th>
+    <th>Tax Rate</th>
+    <th>Estimated Tax Amount</th>
+    <th>Zestimate</th>
+  </tr>
+
+  <% @properties.each do |prop| %>
+    <tr>
+      <td><%= prop.tax_roll_property.location_address %>
+      <td><%= prop.street_address %></td>
+      <td><%= number_to_percentage(prop.tax_roll_property.tax_rate) %></td>
+      <td><%= number_to_currency(prop.tax_roll_property.estimated_tax_amount, precision: 0) %></td>
+      <td><%= number_to_currency(prop.zestimate, precision: 0) %></td>
+    </tr>
+  <% end %>
+</table>
